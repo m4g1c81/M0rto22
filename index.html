@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="MOrto22">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="author" content="Marco">
+<meta name="copyright" content="© 2026 Marco">
+<meta name="theme-color" content="#4f6b2b">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+<title>MOrto22</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{
+  --bg:#f5f1e6;--card:#fffdf8;--ink:#2b2a24;--muted:#6c6757;--line:#e3dbc8;
+  --brand:#4f6b2b;--brand-ink:#ffffff;--brand-soft:#e6ecd9;
+  --egg:#b97a12;--feed:#4f6b2b;--danger:#a83a28;--danger-soft:#f6e1dc;
+  --hen:#8a5a12;--rooster:#9b3a22;
+  --radius:16px;--shadow:0 1px 2px rgba(60,50,20,.06),0 4px 14px rgba(60,50,20,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#1a1b16;--card:#24251e;--ink:#ece8da;--muted:#a8a28f;--line:#38382e;
+  --brand:#93b65c;--brand-ink:#15160f;--brand-soft:#2e3524;
+  --egg:#e2a94a;--feed:#93b65c;--danger:#e0735f;--danger-soft:#3a241f;
+  --hen:#e2a94a;--rooster:#e0735f;--shadow:none;
+}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+header.top{position:sticky;top:0;z-index:5;background:var(--bg);padding:calc(env(safe-area-inset-top) + 10px) 16px 8px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line)}
+header.top .logo{font-weight:800;font-size:20px;letter-spacing:-.3px}
+header.top .logo span{color:var(--egg)}
+header.top .back{border:0;background:var(--brand-soft);color:var(--brand);font-size:15px;font-weight:600;border-radius:999px;padding:6px 12px}
+main{padding:14px 14px calc(env(safe-area-inset-bottom) + 90px);max-width:820px;margin:0 auto}
+h1{font-size:24px;margin:4px 0 2px;letter-spacing:-.4px}
+h2{font-size:17px;margin:22px 2px 8px}
+.sub{color:var(--muted);font-size:14px;margin:0 2px 10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow);margin-bottom:10px}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:620px){.tiles{grid-template-columns:repeat(3,1fr)}}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px;box-shadow:var(--shadow)}
+.tile .k{font-size:12.5px;color:var(--muted)}
+.tile .v{font-size:24px;font-weight:750;letter-spacing:-.5px;margin-top:2px;font-variant-numeric:tabular-nums}
+.tile .v small{font-size:13px;font-weight:600;color:var(--muted);margin-left:2px}
+.tile .h{font-size:12px;color:var(--muted);margin-top:2px}
+.row{display:flex;align-items:center;gap:12px;padding:12px 2px;border-bottom:1px solid var(--line);cursor:pointer}
+.row:last-child{border-bottom:0}
+.row .main{flex:1;min-width:0}
+.row .t{font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .s{font-size:13px;color:var(--muted)}
+.row .chev{color:var(--muted);font-size:20px}
+.av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-size:22px;background:var(--brand-soft);flex:none}
+.tag{display:inline-block;font-size:12px;font-weight:650;padding:2px 8px;border-radius:999px;border:1px solid currentColor}
+.tag.hen{color:var(--hen)}.tag.rooster{color:var(--rooster)}.tag.off{color:var(--muted)}
+.btn{appearance:none;border:0;border-radius:12px;padding:11px 16px;font:600 15px/1 inherit;font-family:inherit;background:var(--brand);color:var(--brand-ink);cursor:pointer}
+.btn.ghost{background:var(--brand-soft);color:var(--brand)}
+.btn.danger{background:var(--danger-soft);color:var(--danger)}
+.btn.block{width:100%}
+.btn.sm{padding:8px 12px;font-size:14px}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 10px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 12px;font:500 14px inherit;font-family:inherit}
+.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chart-box{position:relative;height:210px}
+.chart-title{font-weight:650;font-size:15px;margin-bottom:2px}
+.chart-sub{font-size:12.5px;color:var(--muted);margin-bottom:8px}
+.empty{text-align:center;padding:28px 16px;color:var(--muted)}
+.empty .big{font-size:44px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15px}
+.kv dt{color:var(--muted)}.kv dd{margin:0;font-weight:550}
+.note{font-size:12.5px;color:var(--muted);margin:6px 2px}
+select,input,textarea{font:16px inherit;font-family:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;width:100%}
+textarea{min-height:64px;resize:vertical}
+label.f{display:block;margin-bottom:12px}
+label.f>span{display:block;font-size:13px;color:var(--muted);margin-bottom:4px;font-weight:550}
+.seg{display:flex;background:var(--brand-soft);border-radius:12px;padding:3px}
+.seg label{flex:1;text-align:center;padding:9px;border-radius:10px;font-weight:600;cursor:pointer}
+.seg input{display:none}
+.seg input:checked+label{background:var(--card);box-shadow:var(--shadow)}
+.counter{display:flex;align-items:center;gap:6px}
+.counter button{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:22px;line-height:1;cursor:pointer}
+.counter button.plus{background:var(--egg);color:#fff;border-color:var(--egg)}
+.counter .n{min-width:28px;text-align:center;font-weight:750;font-size:20px;font-variant-numeric:tabular-nums}
+.datebar{display:flex;gap:8px;align-items:center}
+.datebar button{flex:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:18px}
+table.t{width:100%;border-collapse:collapse;font-size:14px}
+table.t th{text-align:left;color:var(--muted);font-weight:550;font-size:12.5px;padding:6px 4px;border-bottom:1px solid var(--line)}
+table.t td{padding:9px 4px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+table.t td.r,table.t th.r{text-align:right}
+nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:6;background:var(--card);border-top:1px solid var(--line);display:flex;padding:6px 4px calc(env(safe-area-inset-bottom) + 6px)}
+nav.tabs button{flex:1;border:0;background:none;color:var(--muted);font:600 11px inherit;font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:2px;padding:4px 0;cursor:pointer}
+nav.tabs button .i{font-size:22px;filter:grayscale(1);opacity:.7}
+nav.tabs button.on{color:var(--brand)}
+nav.tabs button.on .i{filter:none;opacity:1}
+.sheet{position:fixed;inset:0;z-index:20;background:rgba(20,18,10,.45);display:flex;align-items:flex-end;justify-content:center}
+.sheet.hidden{display:none}
+.sheet-card{background:var(--bg);width:100%;max-width:560px;max-height:92vh;overflow:auto;border-radius:20px 20px 0 0;padding:18px 16px calc(env(safe-area-inset-bottom) + 18px)}
+@media(min-width:620px){.sheet{align-items:center}.sheet-card{border-radius:20px}}
+.sheet-card h3{margin:0 0 14px;font-size:19px}
+.sheet-actions{display:flex;gap:10px;margin-top:8px}
+.sheet-actions .btn{flex:1}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom) + 84px);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:12px;font-size:14px;z-index:30;opacity:0;transition:opacity .2s;pointer-events:none;max-width:90vw;text-align:center}
+.toast.show{opacity:1}
+.banner{background:var(--danger-soft);color:var(--danger);border-radius:12px;padding:10px 12px;font-size:13.5px;margin-bottom:10px}
+.foot{text-align:center;color:var(--muted);font-size:12px;margin-top:24px}
+
+/* ===== v1.1: stile a sezioni ===== */
+body{background:radial-gradient(1200px 400px at 50% -120px, var(--brand-soft), transparent 70%) var(--bg)}
+header.top{background:color-mix(in srgb, var(--bg) 82%, transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+header.top .logo{display:flex;align-items:center;gap:8px;font-family:"Fraunces",Georgia,serif}
+h1,h2,.hero h1{font-family:"Fraunces",Georgia,serif}
+.hero{position:relative;overflow:hidden;border-radius:24px;padding:18px 18px 16px;color:#fff;margin:6px 0 14px;background:linear-gradient(135deg,var(--h1),var(--h2));box-shadow:0 10px 30px -12px var(--h1)}
+.hero::after{content:"";position:absolute;inset:auto -40px -60px auto;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.12)}
+.hero .em{position:absolute;right:6px;top:8px;font-size:68px;transform:rotate(-8deg);z-index:1;filter:drop-shadow(0 6px 10px rgba(0,0,0,.18))}
+.hero .eyebrow{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.88;font-weight:700;padding-right:80px}
+.hero h1{color:#fff;font-size:30px;margin:4px 0 4px;padding-right:80px;line-height:1.1}
+.hero .hs{opacity:.92;font-size:14px;padding-right:70px}
+.hero .hstats{position:relative;z-index:2;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:8px;margin-top:14px}
+.hero .hstats div{background:rgba(255,255,255,.16);border-radius:14px;padding:9px 10px;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.hero .hstats b{display:block;font-size:21px;font-weight:750;letter-spacing:-.4px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.hero .hstats span{font-size:11.5px;opacity:.9}
+.th-home{--h1:#3f5a22;--h2:#7d9b3c}.th-pollai{--h1:#7a3f22;--h2:#c27a3f}.th-uova{--h1:#a86a0c;--h2:#e0ad46}
+.th-mangime{--h1:#56662a;--h2:#a59a45}.th-dati{--h1:#36424b;--h2:#6b7c87}.th-hen{--h1:#9a6512;--h2:#d99d3e}.th-rooster{--h1:#8e2f1d;--h2:#cf6a3c}
+.sec{display:flex;align-items:center;gap:10px;margin:26px 2px 10px}
+.sec .si{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;background:var(--card);border:1px solid var(--line);font-size:16px;flex:none}
+.sec h2{margin:0;font-size:19px;letter-spacing:-.2px}
+.sec .ln{flex:1;height:1px;background:var(--line)}
+.sec .count{font-size:12.5px;font-weight:700;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:2px 9px}
+.link{border:0;background:none;color:var(--brand);font:650 14px inherit;font-family:inherit;padding:4px 0;cursor:pointer}
+.tile{position:relative}
+.tile .ic{position:absolute;right:10px;top:10px;font-size:17px;opacity:.9}
+.tile .k{padding-right:24px}
+.cta{margin:0 0 4px;padding:15px 16px;font-size:16px;border-radius:14px;box-shadow:0 8px 20px -10px var(--brand)}
+.pgrid{display:grid;gap:10px}
+@media(min-width:620px){.pgrid{grid-template-columns:1fr 1fr}}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:var(--shadow);cursor:pointer;border-top:4px solid var(--egg)}
+.pcard .ph{display:flex;align-items:center;gap:12px}
+.pcard .pe{width:44px;height:44px;border-radius:14px;background:var(--brand-soft);display:grid;place-items:center;font-size:24px;flex:none}
+.pcard .main{flex:1;min-width:0}.pcard .t{font-weight:700;font-size:17px}.pcard .s{font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pcard .chev{color:var(--muted);font-size:22px}
+.pcard .pst{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:12px}
+.pcard .pst div{background:var(--bg);border-radius:12px;padding:8px 6px;text-align:center}
+.pcard .pst div.hl{background:color-mix(in srgb, var(--egg) 16%, var(--card))}
+.pcard .pst b{display:block;font-size:18px;font-variant-numeric:tabular-nums}.pcard .pst span{font-size:11px;color:var(--muted)}
+.card.list{padding:2px 14px}
+.av.hen{background:color-mix(in srgb, var(--hen) 16%, var(--card))}
+.av.rooster{background:color-mix(in srgb, var(--rooster) 16%, var(--card))}
+.av.feed{background:var(--brand-soft)}
+.amt{text-align:right;flex:none}.amt b{display:block;font-variant-numeric:tabular-nums}.amt span{font-size:12px;color:var(--muted)}
+.chart-title{font-family:"Fraunces",Georgia,serif;font-size:16px}
+nav.tabs{background:color-mix(in srgb, var(--card) 88%, transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+nav.tabs button .i{padding:2px 16px;border-radius:999px;transition:background .2s}
+nav.tabs button.on .i{background:var(--brand-soft)}
+.toolbar{padding:12px}
+</style>
+</head>
+<body>
+<header class="top" id="top"></header>
+<main id="view"></main>
+<nav class="tabs" id="tabs">
+  <button data-act="tab" data-v="home"><span class="i">🏡</span>Home</button>
+  <button data-act="tab" data-v="pollai"><span class="i">🐔</span>Pollai</button>
+  <button data-act="tab" data-v="uova"><span class="i">🥚</span>Uova</button>
+  <button data-act="tab" data-v="mangime"><span class="i">🌾</span>Mangime</button>
+  <button data-act="tab" data-v="backup"><span class="i">⚙️</span>Dati</button>
+</nav>
+<div class="sheet hidden" id="sheet"><div class="sheet-card" id="sheetCard"></div></div>
+<div class="toast" id="toast"></div>
+<input type="file" id="importFile" accept="application/json,.json" style="display:none">
+
+<script>
+"use strict";
+/* ================= Dati ================= */
+const KEY = 'morto22-db-v1';
+let storageOk = true;
+function loadDB(){ try{ const s = localStorage.getItem(KEY); return s ? JSON.parse(s) : null; }catch(e){ storageOk = false; return null; } }
+function saveDB(){ try{ localStorage.setItem(KEY, JSON.stringify(db)); storageOk = true; }catch(e){ storageOk = false; } }
+function normalize(d){
+  d = d && typeof d === 'object' ? d : {};
+  return { v:1, pollai: Array.isArray(d.pollai)?d.pollai:[], animali: Array.isArray(d.animali)?d.animali:[],
+           uova: d.uova && typeof d.uova==='object' ? d.uova : {}, mangime: Array.isArray(d.mangime)?d.mangime:[] };
+}
+let db = normalize(loadDB());
+
+const VERSIONE = '1.1';
+const ANNO = 2026;
+const firma = () => `<div class="foot"><b>MOrto22</b> · versione ${VERSIONE}<br>© ${ANNO} Marco · Tutti i diritti riservati</div>`;
+const RAZZE = ['Livornese','Ancona','Padovana','Valdarnese','Siciliana','Robusta Maculata','Australorp','Orpington','Rhode Island Red','Sussex','Wyandotte','Brahma','Marans','Moroseta','Araucana','Plymouth Rock','Ovaiola rossa (ibrida)','Ovaiola bianca (ibrida)','Meticcia'];
+const MESI = ['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
+
+/* ================= Utilità ================= */
+const $ = s => document.querySelector(s);
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,7);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const pad = n => String(n).padStart(2,'0');
+const iso = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const today = () => iso(new Date());
+const parseD = s => { const [y,m,d] = s.split('-').map(Number); return new Date(y, m-1, d); };
+const addDays = (s, n) => { const d = parseD(s); d.setDate(d.getDate()+n); return iso(d); };
+const daysBetween = (a, b) => Math.round((parseD(b) - parseD(a)) / 864e5);
+const fmtD = s => s ? s.split('-').reverse().join('/') : '—';
+const fmtDLong = s => { const d = parseD(s); return d.toLocaleDateString('it-IT',{weekday:'long', day:'numeric', month:'long', year:'numeric'}); };
+const nf0 = new Intl.NumberFormat('it-IT',{maximumFractionDigits:0});
+const nf1 = new Intl.NumberFormat('it-IT',{maximumFractionDigits:1, minimumFractionDigits:0});
+const nf2 = new Intl.NumberFormat('it-IT',{maximumFractionDigits:2, minimumFractionDigits:2});
+const eur = v => '€ ' + nf2.format(v || 0);
+const monthKey = s => s.slice(0,7);
+const monthLabel = k => { const [y,m] = k.split('-'); return MESI[+m-1] + ' ' + y.slice(2); };
+
+function spanStr(from, to){
+  if(!from) return '—';
+  to = to || today();
+  const a = parseD(from), b = parseD(to);
+  let m = (b.getFullYear()-a.getFullYear())*12 + b.getMonth()-a.getMonth();
+  if(b.getDate() < a.getDate()) m--;
+  if(m < 1){ const d = Math.max(0, daysBetween(from,to)); return d + (d===1?' giorno':' giorni'); }
+  const y = Math.floor(m/12), r = m%12;
+  return [y ? y + (y===1?' anno':' anni') : '', r ? r + (r===1?' mese':' mesi') : ''].filter(Boolean).join(' e ');
+}
+function lastMonths(n){ const out=[]; const d=new Date(); d.setDate(1); for(let i=n-1;i>=0;i--){ const x=new Date(d.getFullYear(), d.getMonth()-i, 1); out.push(`${x.getFullYear()}-${pad(x.getMonth()+1)}`);} return out; }
+function lastDays(n){ const t=today(); const out=[]; for(let i=n-1;i>=0;i--) out.push(addDays(t,-i)); return out; }
+
+const pollaio = id => db.pollai.find(p => p.id === id);
+const animale = id => db.animali.find(a => a.id === id);
+const attivi = list => list.filter(a => (a.stato||'attivo') === 'attivo');
+const animaliDi = pid => db.animali.filter(a => a.pollaioId === pid);
+const isHen = a => a.sesso === 'gallina';
+
+function eggEntries(filterIds){
+  const set = filterIds ? new Set(filterIds) : null, out = [];
+  for(const [k,q] of Object.entries(db.uova)){
+    const i = k.lastIndexOf('|'); const a = k.slice(0,i), d = k.slice(i+1);
+    if(!set || set.has(a)) out.push({a, d, q:+q||0});
+  }
+  return out;
+}
+const sumQ = list => list.reduce((s,e) => s+e.q, 0);
+function perDay(entries, days){ const m={}; entries.forEach(e => m[e.d]=(m[e.d]||0)+e.q); return days.map(d => m[d]||0); }
+function perMonth(entries, months){ const m={}; entries.forEach(e => { const k=monthKey(e.d); m[k]=(m[k]||0)+e.q; }); return months.map(k => m[k]||0); }
+
+function henStats(h){
+  const e = eggEntries([h.id]).filter(x => x.q>0).sort((a,b) => a.d<b.d?-1:1);
+  const tot = sumQ(e), t = today();
+  const first = e[0]?.d, last = e.at(-1)?.d;
+  const start = h.inizioDeposizione || first;
+  const giorni = start ? Math.max(1, daysBetween(start, t)+1) : 0;
+  const since30 = addDays(t,-29);
+  const s30 = sumQ(e.filter(x => x.d >= since30));
+  const days30 = start ? Math.min(30, Math.max(1, daysBetween(start > since30 ? start : since30, t)+1)) : 30;
+  const months = {}; e.forEach(x => { const k=monthKey(x.d); months[k]=(months[k]||0)+x.q; });
+  const best = Object.entries(months).sort((a,b)=>b[1]-a[1])[0];
+  return { tot, first, last, start, giorni, media: giorni ? tot/giorni : 0, s30, tasso30: start ? s30/days30 : 0, best, entries:e };
+}
+
+function feedStats(list, nAnimali){
+  const s = [...list].sort((a,b) => a.data<b.data?-1:1);
+  const totKg = s.reduce((t,x)=>t+(+x.kg||0),0), totCost = s.reduce((t,x)=>t+(+x.costo||0),0);
+  const r = { n:s.length, totKg, totCost, eurKg: totKg ? totCost/totKg : 0, stima:false };
+  if(s.length >= 2){
+    const days = daysBetween(s[0].data, s.at(-1).data);
+    if(days > 0){
+      const kg = totKg - (+s.at(-1).kg||0), c = totCost - (+s.at(-1).costo||0);
+      r.kgDay = kg/days; r.costDay = c/days;
+    }
+  }
+  if(r.kgDay == null && s.length){
+    const days = Math.max(30, daysBetween(s[0].data, today()));
+    r.kgDay = totKg/days; r.costDay = totCost/days; r.stima = true;
+  }
+  if(r.kgDay != null){ r.kgMese = r.kgDay*30.44; r.costMese = r.costDay*30.44; }
+  r.gCapo = nAnimali && r.kgDay ? r.kgDay*1000/nAnimali : null;
+  return r;
+}
+
+/* ================= UI helpers ================= */
+let charts = [], after = [];
+function toast(msg){ const t=$('#toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(toast._t); toast._t=setTimeout(()=>t.classList.remove('show'), 2200); }
+function tile(k, v, unit, hint, ic){ return `<div class="tile">${ic?`<span class="ic" aria-hidden="true">${ic}</span>`:''}<div class="k">${k}</div><div class="v">${v}${unit?`<small>${unit}</small>`:''}</div>${hint?`<div class="h">${hint}</div>`:''}</div>`; }
+function cssVar(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+
+function chartCard(id, title, sub){ return `<div class="card"><div class="chart-title">${title}</div>${sub?`<div class="chart-sub">${sub}</div>`:''}<div class="chart-box"><canvas id="${id}" role="img" aria-label="${esc(title)}"></canvas></div></div>`; }
+function chart(id, type, labels, data, o={}){
+  after.push(() => {
+    const el = document.getElementById(id); if(!el) return;
+    if(!window.Chart){ el.parentElement.innerHTML = '<div class="empty">Grafico non disponibile (serve la connessione per caricarlo).</div>'; return; }
+    const col = cssVar(o.color||'--egg'), ink = cssVar('--muted'), grid = cssVar('--line'), hz = !!o.horizontal;
+    const valAxis = { beginAtZero:true, grid:{color:grid}, border:{display:false}, ticks:{color:ink, precision:o.precision??0, callback:o.tick} };
+    const catAxis = { grid:{display:false}, border:{color:grid}, ticks:{color:ink, maxRotation:0, autoSkip:!hz, maxTicksLimit:hz?50:8} };
+    charts.push(new Chart(el, {
+      type,
+      data:{ labels, datasets:[{ label:o.label||'', data, backgroundColor: type==='line' ? col+'2e' : col, borderColor: col,
+        borderWidth: type==='line'?2:0, borderRadius:4, borderSkipped:'start', fill: type==='line', cubicInterpolationMode:'monotone',
+        pointRadius:0, pointHoverRadius:5, pointHoverBackgroundColor:col, maxBarThickness:26 }]},
+      options:{ indexAxis: hz?'y':'x', responsive:true, maintainAspectRatio:false, animation:{duration:300},
+        interaction:{ mode:'index', intersect:false },
+        plugins:{ legend:{display:false}, tooltip:{ displayColors:false, callbacks:{ label: c => (o.label?o.label+': ':'') + (o.fmt ? o.fmt(c.parsed[hz?'x':'y']) : c.formattedValue) } } },
+        scales: hz ? { x:valAxis, y:catAxis } : { x:catAxis, y:valAxis } }
+    }));
+  });
+}
+
+function pollaioOptions(sel, withAll){
+  return (withAll ? `<option value="">${withAll}</option>` : '') +
+    db.pollai.map(p => `<option value="${p.id}" ${p.id===sel?'selected':''}>${esc(p.nome)}</option>`).join('');
+}
+
+/* ===== Sheet (form / conferma) ===== */
+let sheetSubmit = null;
+function openSheet(title, body, onSubmit, okLabel='Salva', danger=false){
+  sheetSubmit = onSubmit;
+  $('#sheetCard').innerHTML = `<h3>${title}</h3><form id="sheetForm" novalidate>${body}
+    <div class="sheet-actions"><button type="button" class="btn ghost" data-act="closeSheet">Annulla</button>
+    <button type="submit" class="btn ${danger?'danger':''}">${okLabel}</button></div></form>`;
+  $('#sheet').classList.remove('hidden');
+  const f = $('#sheetForm');
+  f.addEventListener('submit', ev => { ev.preventDefault(); const fd = Object.fromEntries(new FormData(f).entries()); if(sheetSubmit(fd, f) !== false) closeSheet(); });
+  f.addEventListener('change', ev => { if(ev.target.name==='sesso'){ const w=f.querySelector('#depWrap'); if(w) w.style.display = ev.target.value==='gallina'?'':'none'; } });
+}
+function closeSheet(){ $('#sheet').classList.add('hidden'); sheetSubmit = null; }
+function confirmSheet(msg, okLabel, cb){ openSheet('Sei sicuro?', `<p style="margin:0 0 14px">${msg}</p>`, () => { cb(); }, okLabel, true); }
+function invalid(f, name, msg){ const el=f.querySelector(`[name="${name}"]`); if(el){ el.focus(); el.style.borderColor='var(--danger)'; } toast(msg); return false; }
+
+/* ================= Router ================= */
+let route = { name:'home' };
+const ui = { uovaData: today(), uovaPollaio: '', filtro: 'tutti', mangimePollaio: '' };
+function go(r){ route = r; render(); window.scrollTo(0,0); }
+function render(){
+  charts.forEach(c => c.destroy()); charts = []; after = [];
+  const V = VIEWS[route.name] || VIEWS.home;
+  const r = V(route);
+  $('#top').innerHTML = (r.back ? `<button class="back" data-act="back" data-to='${esc(JSON.stringify(r.back))}'>‹ ${esc(r.backLabel||'Indietro')}</button>` : `<div class="logo"><svg width="26" height="30" viewBox="0 0 26 30" aria-hidden="true"><ellipse cx="13" cy="17" rx="11" ry="13" fill="var(--egg)"/><ellipse cx="9" cy="12" rx="3" ry="4.5" fill="#fff" opacity=".45"/></svg><b style="font-weight:800">MOrto<span>22</span></b></div>`);
+  $('#view').innerHTML = (storageOk ? '' : `<div class="banner">⚠️ Il salvataggio nel browser non è disponibile qui: i dati restano solo finché la pagina è aperta. Esporta un backup dalla sezione Dati.</div>`) + r.html;
+  const tab = r.tab || route.name;
+  document.querySelectorAll('#tabs button').forEach(b => b.classList.toggle('on', b.dataset.v === tab));
+  after.forEach(f => f());
+}
+
+/* ================= Viste ================= */
+const pl = (n, s, p) => `${nf0.format(n)} ${n===1 ? s : p}`;
+function saluto(){ const h = new Date().getHours(); return h < 12 ? 'Buongiorno' : h < 18 ? 'Buon pomeriggio' : 'Buonasera'; }
+function hero(th, o){
+  return `<section class="hero th-${th}">${o.em ? `<div class="em" aria-hidden="true">${o.em}</div>` : ''}
+    ${o.eyebrow ? `<div class="eyebrow">${o.eyebrow}</div>` : ''}<h1>${o.title}</h1>${o.sub ? `<div class="hs">${o.sub}</div>` : ''}
+    ${o.stats ? `<div class="hstats">${o.stats.map(([v,l,id]) => `<div><b ${id?`id="${id}"`:''}>${v}</b><span>${l}</span></div>`).join('')}</div>` : ''}</section>`;
+}
+function sec(icon, title, extra=''){ return `<div class="sec"><span class="si">${icon}</span><h2>${title}</h2><span class="ln"></span>${extra}</div>`; }
+
+const VIEWS = {
+home(){
+  const vivi = attivi(db.animali), hens = vivi.filter(isHen), roosters = vivi.filter(a => !isHen(a));
+  const all = eggEntries(), t = today(), mk = monthKey(t);
+  const oggi = sumQ(all.filter(e => e.d===t)), mese = sumQ(all.filter(e => monthKey(e.d)===mk));
+  const s30 = sumQ(all.filter(e => e.d >= addDays(t,-29)));
+  const fs = feedStats(db.mangime, vivi.length);
+  const costoUovo = fs.costDay && s30 ? fs.costDay / (s30/30) : null;
+  if(!db.pollai.length){
+    return { html: hero('home', {em:'🐓', eyebrow:fmtDLong(t), title:'Benvenuto in MOrto22', sub:'Pollai, galline, uova e mangime: tutto in un unico posto.'}) +
+      `<div class="card empty"><div class="big">🛖</div><p>Per iniziare crea il tuo primo pollaio, poi aggiungi galline e galli.</p><button class="btn" data-act="addPollaio">+ Crea pollaio</button></div>` + firma() };
+  }
+  let h = hero('home', {em:'🐓', eyebrow:fmtDLong(t), title:saluto()+'!',
+    sub:`${pl(db.pollai.length,'pollaio','pollai')} · ${pl(hens.length,'gallina','galline')} · ${pl(roosters.length,'gallo','galli')}`,
+    stats:[[nf0.format(oggi),'uova oggi'], [nf0.format(mese),'uova del mese'], [hens.length ? nf0.format(s30/30/hens.length*100)+'%' : '—','deposizione 30 gg']]});
+  h += `<button class="btn block cta" data-act="tab" data-v="uova">🥚 Registra la raccolta di oggi</button>`;
+  h += sec('🛖','I tuoi pollai', `<button class="link" data-act="tab" data-v="pollai">Tutti ›</button>`) + `<div class="pgrid">${db.pollai.map(pollaioCard).join('')}</div>`;
+  h += sec('📈','Produzione') + `<div class="tiles">
+    ${tile('Ultimi 30 giorni', nf0.format(s30), 'uova', `media ${nf1.format(s30/30)} al giorno`, '🥚')}
+    ${tile('Per gallina', hens.length ? nf1.format(s30/hens.length) : '—', 'uova', 'negli ultimi 30 giorni', '🐔')}</div>`;
+  const days = lastDays(30), months = lastMonths(12);
+  h += chartCard('cHome30', 'Uova raccolte al giorno', 'Ultimi 30 giorni, tutti i pollai');
+  chart('cHome30', 'line', days.map(d => d.slice(8)+'/'+d.slice(5,7)), perDay(all, days), {label:'Uova'});
+  h += chartCard('cHome12', 'Uova per mese', 'Ultimi 12 mesi');
+  chart('cHome12', 'bar', months.map(monthLabel), perMonth(all, months), {label:'Uova'});
+  h += sec('🌾','Mangime', `<button class="link" data-act="tab" data-v="mangime">Dettagli ›</button>`) + `<div class="tiles">
+    ${tile('Consumo al mese', fs.kgMese!=null ? nf1.format(fs.kgMese) : '—', fs.kgMese!=null?'kg':'', fs.costMese!=null ? eur(fs.costMese)+' al mese'+(fs.stima?' (stima)':'') : 'nessun acquisto', '⚖️')}
+    ${tile('Costo per uovo', costoUovo!=null ? eur(costoUovo) : '—', '', costoUovo!=null ? 'mangime, ultimi 30 gg' : 'servono uova e acquisti', '💶')}</div>`;
+  h += firma();
+  return { html:h };
+},
+pollai(){
+  const vivi = attivi(db.animali), g = vivi.filter(isHen).length;
+  let h = hero('pollai', {em:'🛖', eyebrow:'Allevamento', title:'I tuoi pollai', sub:'Tocca un pollaio per vedere animali e produzione.',
+    stats:[[db.pollai.length,'pollai'], [g,'galline'], [vivi.length-g,'galli']]});
+  h += db.pollai.length ? `<div class="pgrid">${db.pollai.map(pollaioCard).join('')}</div>` : `<div class="card empty"><div class="big">🛖</div><p>Nessun pollaio. Creane uno.</p></div>`;
+  h += `<div class="actions"><button class="btn block" data-act="addPollaio">+ Nuovo pollaio</button></div>`;
+  return { html:h };
+},
+pollaio(r){
+  const p = pollaio(r.id); if(!p) return VIEWS.pollai();
+  const tutti = animaliDi(p.id), vivi = attivi(tutti), hens = vivi.filter(isHen);
+  const ent = eggEntries(tutti.map(a=>a.id)), t = today();
+  const s30 = sumQ(ent.filter(e => e.d >= addDays(t,-29)));
+  const fs = feedStats(db.mangime.filter(m => m.pollaioId===p.id), vivi.length);
+  let h = hero('pollai', {em:'🛖', eyebrow:'Pollaio', title:esc(p.nome), sub:esc(p.note||''),
+    stats:[[hens.length,'galline'], [vivi.length-hens.length,'galli'], [sumQ(ent.filter(e=>e.d===t)),'uova oggi']]});
+  h += `<div class="actions"><button class="btn sm" data-act="eggsFor" data-id="${p.id}">🥚 Registra uova</button>
+    <button class="btn ghost sm" data-act="editPollaio" data-id="${p.id}">✏️ Modifica</button>
+    <button class="btn danger sm" data-act="delPollaio" data-id="${p.id}">Elimina</button></div>`;
+  const f = ui.filtro;
+  const chips = [['tutti','Tutti'],['galline','Galline'],['galli','Galli'],['inattivi','Non attivi']];
+  let list = f==='galline' ? vivi.filter(isHen) : f==='galli' ? vivi.filter(a=>!isHen(a)) : f==='inattivi' ? tutti.filter(a=>(a.stato||'attivo')!=='attivo') : vivi;
+  list = [...list].sort((a,b) => (isHen(a)===isHen(b) ? (a.nome||'').localeCompare(b.nome||'') : isHen(a)?-1:1));
+  h += sec('🐔','Animali', `<span class="count">${vivi.length}</span>`);
+  h += `<div class="chips">${chips.map(([k,l])=>`<button class="chip ${f===k?'on':''}" data-act="filtro" data-v="${k}">${l}</button>`).join('')}</div>`;
+  h += list.length ? `<div class="card list">${list.map(animaleRow).join('')}</div>` : `<div class="card empty">Nessun animale in questa vista.</div>`;
+  h += `<div class="actions"><button class="btn ghost block" data-act="addAnimale" data-pollaio="${p.id}">+ Aggiungi animale</button></div>`;
+  if(hens.length){
+    h += sec('📈','Produzione') + `<div class="tiles">
+      ${tile('Uova ultimi 30 gg', nf0.format(s30), '', `media ${nf1.format(s30/30)} al giorno`, '🥚')}
+      ${tile('Deposizione', nf0.format(s30/30/hens.length*100), '%', 'uova per gallina al giorno', '📊')}
+      ${fs.n ? tile('Mangime al mese', nf1.format(fs.kgMese), 'kg', 'acquisti di questo pollaio', '🌾') + tile('Spesa al mese', eur(fs.costMese), '', fs.stima?'stima':'', '💶') : ''}</div>`;
+    const months = lastMonths(12);
+    h += chartCard('cPm', 'Uova per mese', 'Ultimi 12 mesi, tutte le galline del pollaio');
+    chart('cPm','bar', months.map(monthLabel), perMonth(ent, months), {label:'Uova'});
+    const since = addDays(t,-29);
+    const rank = hens.map(a => ({a, n: sumQ(ent.filter(e => e.a===a.id && e.d>=since))})).sort((x,y)=>y.n-x.n);
+    const hh = Math.max(160, rank.length*30+40);
+    h += `<div class="card"><div class="chart-title">Classifica galline</div><div class="chart-sub">Uova negli ultimi 30 giorni</div><div class="chart-box" style="height:${hh}px"><canvas id="cPr" role="img" aria-label="Uova per gallina"></canvas></div></div>`;
+    chart('cPr','bar', rank.map(x => x.a.nome||'—'), rank.map(x=>x.n), {label:'Uova', horizontal:true});
+  }
+  return { html:h, back:{name:'pollai'}, backLabel:'Pollai', tab:'pollai' };
+},
+animale(r){
+  const a = animale(r.id); if(!a) return VIEWS.pollai();
+  const p = pollaio(a.pollaioId), hen = isHen(a), stato = a.stato||'attivo';
+  const s = hen ? henStats(a) : null;
+  const sub = [esc(a.razza||'Razza non indicata'), a.nascita ? spanStr(a.nascita) : ''].filter(Boolean).join(' · ');
+  let h = hero(hen ? 'hen' : 'rooster', {em: hen?'🐔':'🐓', eyebrow:(hen?'♀ Gallina':'♂ Gallo') + (stato!=='attivo' ? ' · '+stato : ''), title:esc(a.nome||'Senza nome'), sub,
+    stats: s && s.tot ? [[nf0.format(s.tot),'uova totali'], [nf0.format(s.s30),'ultimi 30 gg'], [nf0.format(s.tasso30*100)+'%','deposizione']] : null});
+  h += `<div class="actions">${hen?`<button class="btn sm" data-act="eggsFor" data-id="${a.pollaioId}">🥚 Registra uova</button>`:''}
+    <button class="btn ghost sm" data-act="editAnimale" data-id="${a.id}">✏️ Modifica</button>
+    <button class="btn danger sm" data-act="delAnimale" data-id="${a.id}">Elimina</button></div>`;
+  h += sec('📋','Scheda') + `<div class="card"><dl class="kv">
+    <dt>Razza</dt><dd>${esc(a.razza||'—')}</dd>
+    <dt>Nascita</dt><dd>${fmtD(a.nascita)}${a.nascita?` · ${spanStr(a.nascita)}`:''}</dd>
+    <dt>Pollaio</dt><dd>${esc(p?.nome||'—')}</dd>
+    ${a.anello?`<dt>Anello / segno</dt><dd>${esc(a.anello)}</dd>`:''}
+    ${hen?`<dt>Inizio deposizione</dt><dd>${a.inizioDeposizione?fmtD(a.inizioDeposizione)+(a.nascita?` · a ${spanStr(a.nascita,a.inizioDeposizione)} di età`:''):'non ancora'}</dd>`:''}
+    <dt>Stato</dt><dd>${esc(stato)}</dd>
+    ${a.note?`<dt>Note</dt><dd>${esc(a.note)}</dd>`:''}
+  </dl></div>`;
+  if(hen){
+    if(!s.tot){
+      h += sec('🥚','Produzione') + `<div class="card empty"><div class="big">🥚</div>Nessun uovo registrato per ${esc(a.nome||'questa gallina')}.<br>Al primo uovo registrato, la data di inizio deposizione si imposta da sola.</div>`;
+    } else {
+      const dl = s.last ? daysBetween(s.last, today()) : null;
+      h += sec('📊','Statistiche uova') + `<div class="tiles">
+        ${tile('Media generale', nf2.format(s.media), 'uova/g', `≈ ${nf1.format(s.media*7)} a settimana`, '⚖️')}
+        ${tile('Giorni in deposizione', nf0.format(s.giorni), '', `dal ${fmtD(s.start)}`, '📅')}
+        ${tile('Ultimo uovo', s.last ? ({0:'oggi',1:'ieri'}[dl] ?? fmtD(s.last)) : '—', '', dl>1 ? `${dl} giorni fa` : '', '🥚')}
+        ${tile('Mese migliore', s.best?nf0.format(s.best[1]):'—', 'uova', s.best?monthLabel(s.best[0]):'', '🏆')}</div>`;
+      const days = lastDays(30), months = lastMonths(12);
+      h += sec('📈','Grafici') + chartCard('cA30','Uova al giorno','Ultimi 30 giorni');
+      chart('cA30','bar', days.map(d => d.slice(8)+'/'+d.slice(5,7)), perDay(s.entries, days), {label:'Uova'});
+      h += chartCard('cA12','Uova per mese','Ultimi 12 mesi');
+      chart('cA12','bar', months.map(monthLabel), perMonth(s.entries, months), {label:'Uova'});
+    }
+  }
+  return { html:h, back:{name:'pollaio', id:a.pollaioId}, backLabel:p?.nome||'Pollaio', tab:'pollai' };
+},
+uova(){
+  if(!db.pollai.length) return { html: hero('uova', {em:'🥚', eyebrow:'Raccolta', title:'Raccolta uova', sub:'Crea prima un pollaio e aggiungi le galline.'}) + `<div class="card empty"><button class="btn" data-act="addPollaio">+ Crea pollaio</button></div>` };
+  if(ui.uovaPollaio && !pollaio(ui.uovaPollaio)) ui.uovaPollaio = '';
+  const d = ui.uovaData;
+  const hens = attivi(db.animali).filter(a => isHen(a) && (!ui.uovaPollaio || a.pollaioId===ui.uovaPollaio));
+  const tot = hens.reduce((s,a) => s + (+db.uova[a.id+'|'+d]||0), 0);
+  let h = hero('uova', {em:'🥚', eyebrow:fmtDLong(d), title:'Raccolta uova', sub:'Tocca + per ogni uovo deposto. Si salva da solo.',
+    stats:[[tot,'uova del giorno','uovaTot'], [hens.length,'galline']]});
+  h += `<div class="card"><div class="datebar"><button data-act="dayPrev" aria-label="Giorno precedente">‹</button>
+    <input type="date" id="uovaData" value="${d}" max="${today()}"><button data-act="dayNext" aria-label="Giorno successivo" ${d>=today()?'disabled style="opacity:.4"':''}>›</button></div>
+    ${d!==today()?`<button class="link" data-act="dayToday" style="margin-top:8px">Torna a oggi</button>`:''}
+    <label class="f" style="margin:12px 0 0"><span>Pollaio</span><select id="uovaPollaio">${pollaioOptions(ui.uovaPollaio, 'Tutti i pollai')}</select></label></div>`;
+  if(!hens.length) return { html: h + `<div class="card empty">Nessuna gallina attiva${ui.uovaPollaio?' in questo pollaio':''}.</div>` };
+  const groups = db.pollai.filter(p => hens.some(a => a.pollaioId===p.id));
+  groups.forEach(p => {
+    const hs = hens.filter(a => a.pollaioId===p.id).sort((a,b) => (a.nome||'').localeCompare(b.nome||''));
+    h += sec('🛖', esc(p.nome), `<span class="count">${hs.length}</span>`) + `<div class="card list">` + hs.map(a => {
+      const n = +db.uova[a.id+'|'+d] || 0;
+      return `<div class="row" style="cursor:default"><div class="av hen">🐔</div><div class="main"><div class="t">${esc(a.nome||'Senza nome')}</div><div class="s">${esc(a.razza||'')}</div></div>
+        <div class="counter"><button data-act="egg" data-id="${a.id}" data-d="-1" aria-label="Togli uovo">−</button><span class="n" id="n-${a.id}">${n}</span><button class="plus" data-act="egg" data-id="${a.id}" data-d="1" aria-label="Aggiungi uovo">+</button></div></div>`;
+    }).join('') + `</div>`;
+  });
+  return { html:h };
+},
+mangime(){
+  if(ui.mangimePollaio && !pollaio(ui.mangimePollaio)) ui.mangimePollaio = '';
+  const pid = ui.mangimePollaio;
+  const list = db.mangime.filter(m => !pid || m.pollaioId===pid).sort((a,b) => a.data<b.data?1:-1);
+  const nAn = attivi(pid ? animaliDi(pid) : db.animali).length;
+  const fs = feedStats(list, nAn);
+  let h = hero('mangime', {em:'🌾', eyebrow:'Mangime', title:'Consumo e costi', sub: list.length ? (fs.stima ? 'Stima: registra almeno 2 acquisti per una media precisa.' : `Media su ${pl(fs.n,'acquisto','acquisti')}`) : 'Registra gli acquisti per calcolare la media mensile.',
+    stats: list.length ? [[nf1.format(fs.kgMese)+' kg','al mese'], [eur(fs.costMese),'spesa al mese'], [eur(fs.eurKg),'prezzo al kg']] : null});
+  h += `<div class="card toolbar">${db.pollai.length ? `<label class="f" style="margin:0 0 10px"><span>Mostra</span><select id="mangimePollaio">${pollaioOptions(pid, 'Tutti gli acquisti')}</select></label>` : ''}
+    <button class="btn block" data-act="addMangime">+ Registra acquisto</button></div>`;
+  if(!list.length) return { html: h + `<div class="card empty"><div class="big">🌾</div>Nessun acquisto registrato.</div>` };
+  h += sec('📊','Medie') + `<div class="tiles">
+    ${tile('Per capo al giorno', fs.gCapo ? nf0.format(fs.gCapo) : '—', fs.gCapo?'g':'', pl(nAn,'animale attivo','animali attivi'), '🐔')}
+    ${tile('Consumo al giorno', nf1.format(fs.kgDay), 'kg', '', '⚖️')}
+    ${tile('Totale acquistato', nf1.format(fs.totKg), 'kg', '', '📦')}
+    ${tile('Totale speso', eur(fs.totCost), '', '', '💶')}</div>
+  <p class="note">Il consumo è calcolato dal primo all'ultimo acquisto: l'ultimo sacco si considera ancora in uso, quindi non entra nella media.</p>`;
+  const months = lastMonths(12), byM = {}, byC = {};
+  list.forEach(m => { const k = monthKey(m.data); byM[k]=(byM[k]||0)+(+m.kg||0); byC[k]=(byC[k]||0)+(+m.costo||0); });
+  h += sec('📈','Grafici') + chartCard('cMk','Kg acquistati per mese','Ultimi 12 mesi');
+  chart('cMk','bar', months.map(monthLabel), months.map(k => byM[k]||0), {label:'Kg', color:'--feed', fmt:v=>nf1.format(v)+' kg'});
+  h += chartCard('cMc','Spesa per mese','Ultimi 12 mesi, in euro');
+  chart('cMc','bar', months.map(monthLabel), months.map(k => +(byC[k]||0).toFixed(2)), {label:'Spesa', color:'--egg', fmt:eur, tick:v=>'€'+v});
+  h += sec('🧾','Storico acquisti', `<span class="count">${list.length}</span>`) + `<div class="card list">` +
+    list.map(m => `<div class="row" data-act="editMangime" data-id="${m.id}"><div class="av feed">🌾</div><div class="main"><div class="t">${esc(m.tipo||'Mangime')}</div>
+      <div class="s">${fmtD(m.data)}${!pid && m.pollaioId ? ' · '+esc(pollaio(m.pollaioId)?.nome||'') : ''} · ${m.kg?eur(m.costo/m.kg)+'/kg':''}</div></div>
+      <div class="amt"><b>${nf1.format(+m.kg||0)} kg</b><span>${eur(m.costo)}</span></div></div>`).join('') +
+    `</div><p class="note">Tocca un acquisto per modificarlo o eliminarlo.</p>`;
+  return { html:h };
+},
+backup(){
+  const nU = sumQ(eggEntries());
+  return { html: hero('dati', {em:'💾', eyebrow:'Impostazioni', title:'Dati e backup', sub:'I dati restano su questo dispositivo. Esporta spesso un backup.'}) +
+  sec('📦','Riepilogo') + `<div class="tiles">
+    ${tile('Pollai', db.pollai.length, '', '', '🛖')}${tile('Animali', db.animali.length, '', '', '🐔')}
+    ${tile('Uova registrate', nf0.format(nU), '', '', '🥚')}${tile('Acquisti mangime', db.mangime.length, '', '', '🌾')}</div>` +
+  sec('💾','Backup') + `<div class="card"><div class="actions" style="flex-direction:column;margin:0">
+    <button class="btn block" data-act="export">⬇️ Esporta backup (.json)</button>
+    <button class="btn ghost block" data-act="copyBackup">📋 Copia backup negli appunti</button>
+    <button class="btn ghost block" data-act="import">⬆️ Importa backup</button></div></div>` +
+  sec('📱','Installa su iPhone') + `<div class="card"><p style="margin:0">Apri la pagina in Safari → <b>Condividi</b> → <b>Aggiungi alla schermata Home</b>. MOrto22 si aprirà a schermo intero come un'app.</p></div>` +
+  sec('⚠️','Zona pericolosa') + `<div class="card"><button class="btn danger block" data-act="reset">Cancella tutti i dati</button></div>
+  ` + firma() };
+}
+};
+
+function pollaioCard(p){
+  const tutti = animaliDi(p.id), an = attivi(tutti), g = an.filter(isHen).length, t = today();
+  const ent = eggEntries(tutti.map(a=>a.id));
+  const oggi = sumQ(ent.filter(e=>e.d===t)), s30 = sumQ(ent.filter(e=>e.d>=addDays(t,-29)));
+  return `<div class="pcard" data-act="open" data-r='${JSON.stringify({name:'pollaio',id:p.id})}'>
+    <div class="ph"><span class="pe">🛖</span><div class="main"><div class="t">${esc(p.nome)}</div><div class="s">${p.note ? esc(p.note) : pl(an.length,'animale','animali')}</div></div><span class="chev">›</span></div>
+    <div class="pst"><div><b>${g}</b><span>galline</span></div><div><b>${an.length-g}</b><span>galli</span></div><div class="hl"><b>${oggi}</b><span>uova oggi</span></div><div><b>${s30}</b><span>uova 30 gg</span></div></div></div>`;
+}
+function animaleRow(a){
+  const hen = isHen(a), st = a.stato||'attivo';
+  let s = [esc(a.razza||'razza n.d.'), a.nascita ? spanStr(a.nascita) : ''].filter(Boolean).join(' · ');
+  let right = '';
+  if(hen && st==='attivo'){ const hs = henStats(a); if(hs.tot) right = `<div class="amt"><b>${hs.s30}</b><span>uova 30 gg</span></div>`; else if(!a.inizioDeposizione) s += ' · non ancora in deposizione'; }
+  return `<div class="row" data-act="open" data-r='${JSON.stringify({name:'animale',id:a.id})}'><div class="av ${hen?'hen':'rooster'}">${hen?'🐔':'🐓'}</div><div class="main"><div class="t">${esc(a.nome||'Senza nome')}
+    ${st!=='attivo'?` <span class="tag off">${st}</span>`:''}</div><div class="s">${s}</div></div>${right}<div class="chev">›</div></div>`;
+}
+
+/* ================= Form ================= */
+function formPollaio(p){
+  openSheet(p ? 'Modifica pollaio' : 'Nuovo pollaio', `
+    <label class="f"><span>Nome</span><input name="nome" value="${esc(p?.nome||'')}" placeholder="es. Pollaio grande" autocomplete="off"></label>
+    <label class="f"><span>Note</span><textarea name="note" placeholder="Posizione, dimensioni…">${esc(p?.note||'')}</textarea></label>`,
+  (fd, f) => {
+    if(!fd.nome.trim()) return invalid(f,'nome','Inserisci il nome del pollaio');
+    if(p){ p.nome = fd.nome.trim(); p.note = fd.note.trim(); }
+    else { const np = {id:uid(), nome:fd.nome.trim(), note:fd.note.trim()}; db.pollai.push(np); route = {name:'pollaio', id:np.id}; }
+    saveDB(); render(); toast('Pollaio salvato');
+  });
+}
+function formAnimale(a, pid){
+  const sesso = a?.sesso || 'gallina';
+  openSheet(a ? 'Modifica animale' : 'Nuovo animale', `
+    <label class="f"><span>Nome</span><input name="nome" value="${esc(a?.nome||'')}" placeholder="es. Bianchina" autocomplete="off"></label>
+    <div class="f" style="margin-bottom:12px"><div class="seg">
+      <input type="radio" name="sesso" id="sx1" value="gallina" ${sesso==='gallina'?'checked':''}><label for="sx1">🐔 Gallina</label>
+      <input type="radio" name="sesso" id="sx2" value="gallo" ${sesso==='gallo'?'checked':''}><label for="sx2">🐓 Gallo</label></div></div>
+    <label class="f"><span>Razza</span><input name="razza" list="razze" value="${esc(a?.razza||'')}" placeholder="Scegli o scrivi" autocomplete="off">
+      <datalist id="razze">${[...new Set([...RAZZE, ...db.animali.map(x=>x.razza).filter(Boolean)])].map(r=>`<option value="${esc(r)}">`).join('')}</datalist></label>
+    <label class="f"><span>Data di nascita</span><input type="date" name="nascita" value="${a?.nascita||''}" max="${today()}"></label>
+    <div id="depWrap" style="${sesso==='gallina'?'':'display:none'}"><label class="f"><span>Data inizio deposizione uova</span><input type="date" name="inizioDeposizione" value="${a?.inizioDeposizione||''}" max="${today()}"></label></div>
+    <label class="f"><span>Pollaio</span><select name="pollaioId">${pollaioOptions(a?.pollaioId||pid)}</select></label>
+    <label class="f"><span>Anello / segno di riconoscimento</span><input name="anello" value="${esc(a?.anello||'')}" placeholder="facoltativo" autocomplete="off"></label>
+    <label class="f"><span>Stato</span><select name="stato">${['attivo','venduto','ceduto','deceduto'].map(s=>`<option ${ (a?.stato||'attivo')===s?'selected':''}>${s}</option>`).join('')}</select></label>
+    <label class="f"><span>Note</span><textarea name="note">${esc(a?.note||'')}</textarea></label>`,
+  (fd, f) => {
+    if(!fd.nome.trim()) return invalid(f,'nome','Dai un nome all’animale');
+    if(fd.nascita && fd.inizioDeposizione && fd.inizioDeposizione < fd.nascita) return invalid(f,'inizioDeposizione','La deposizione non può iniziare prima della nascita');
+    const data = { nome:fd.nome.trim(), sesso:fd.sesso, razza:fd.razza.trim(), nascita:fd.nascita, inizioDeposizione: fd.sesso==='gallina' ? (fd.inizioDeposizione||'') : '',
+                   pollaioId:fd.pollaioId, anello:fd.anello.trim(), stato:fd.stato, note:fd.note.trim() };
+    if(a) Object.assign(a, data);
+    else { const na = {id:uid(), ...data}; db.animali.push(na); }
+    saveDB(); render(); toast(a ? 'Modifiche salvate' : 'Animale aggiunto');
+  });
+}
+function formMangime(m){
+  const def = m || { data: today(), pollaioId: ui.mangimePollaio || '' };
+  openSheet(m ? 'Modifica acquisto' : 'Nuovo acquisto mangime', `
+    <label class="f"><span>Data acquisto</span><input type="date" name="data" value="${def.data}" max="${today()}"></label>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <label class="f"><span>Quantità (kg)</span><input name="kg" inputmode="decimal" value="${m?String(m.kg).replace('.',','):''}" placeholder="25"></label>
+      <label class="f"><span>Costo totale (€)</span><input name="costo" inputmode="decimal" value="${m?String(m.costo).replace('.',','):''}" placeholder="18,50"></label></div>
+    <label class="f"><span>Tipo di mangime</span><input name="tipo" list="tipi" value="${esc(m?.tipo||'')}" placeholder="es. Pellet ovaiole, mais spezzato" autocomplete="off">
+      <datalist id="tipi">${[...new Set(db.mangime.map(x=>x.tipo).filter(Boolean))].map(r=>`<option value="${esc(r)}">`).join('')}</datalist></label>
+    <label class="f"><span>Per quale pollaio</span><select name="pollaioId">${pollaioOptions(def.pollaioId, 'Tutti / generale')}</select></label>
+    <label class="f"><span>Note</span><input name="note" value="${esc(m?.note||'')}" placeholder="Negozio, marca…" autocomplete="off"></label>
+    ${m ? `<button type="button" class="btn danger block" data-act="delMangime" data-id="${m.id}" style="margin-bottom:6px">Elimina acquisto</button>` : ''}`,
+  (fd, f) => {
+    const kg = parseFloat(String(fd.kg).replace(',','.')), costo = parseFloat(String(fd.costo).replace(',','.'));
+    if(!fd.data) return invalid(f,'data','Inserisci la data');
+    if(!(kg > 0)) return invalid(f,'kg','Inserisci i kg acquistati');
+    if(!(costo >= 0)) return invalid(f,'costo','Inserisci il costo');
+    const data = { data:fd.data, kg, costo, tipo:fd.tipo.trim(), pollaioId:fd.pollaioId, note:fd.note.trim() };
+    if(m) Object.assign(m, data); else db.mangime.push({id:uid(), ...data});
+    saveDB(); render(); toast('Acquisto salvato');
+  });
+}
+
+/* ================= Azioni ================= */
+const ACT = {
+  tab: d => go({name:d.v}),
+  open: d => go(JSON.parse(d.r)),
+  back: d => go(JSON.parse(d.to)),
+  closeSheet: () => closeSheet(),
+  addPollaio: () => formPollaio(null),
+  editPollaio: d => formPollaio(pollaio(d.id)),
+  delPollaio: d => {
+    const p = pollaio(d.id), an = animaliDi(p.id);
+    confirmSheet(`Eliminare <b>${esc(p.nome)}</b>${an.length?` insieme ai suoi ${an.length} animali e a tutte le loro uova registrate`:''}? L'operazione non si può annullare.`, 'Elimina', () => {
+      const ids = new Set(an.map(a=>a.id));
+      db.animali = db.animali.filter(a => !ids.has(a.id));
+      for(const k of Object.keys(db.uova)) if(ids.has(k.slice(0,k.lastIndexOf('|')))) delete db.uova[k];
+      db.mangime.forEach(m => { if(m.pollaioId===p.id) m.pollaioId=''; });
+      db.pollai = db.pollai.filter(x => x.id!==p.id);
+      saveDB(); go({name:'pollai'}); toast('Pollaio eliminato');
+    });
+  },
+  filtro: d => { ui.filtro = d.v; render(); },
+  addAnimale: d => formAnimale(null, d.pollaio),
+  editAnimale: d => formAnimale(animale(d.id)),
+  delAnimale: d => {
+    const a = animale(d.id);
+    confirmSheet(`Eliminare <b>${esc(a.nome||'questo animale')}</b> e tutte le sue uova registrate? Se è stato venduto o è morto puoi invece cambiarne lo stato, così le statistiche restano.`, 'Elimina', () => {
+      for(const k of Object.keys(db.uova)) if(k.startsWith(a.id+'|')) delete db.uova[k];
+      db.animali = db.animali.filter(x => x.id!==a.id);
+      saveDB(); go({name:'pollaio', id:a.pollaioId}); toast('Animale eliminato');
+    });
+  },
+  eggsFor: d => { ui.uovaPollaio = d.id; ui.uovaData = today(); go({name:'uova'}); },
+  dayPrev: () => { ui.uovaData = addDays(ui.uovaData,-1); render(); },
+  dayToday: () => { ui.uovaData = today(); render(); },
+  dayNext: () => { if(ui.uovaData < today()){ ui.uovaData = addDays(ui.uovaData,1); render(); } },
+  egg: d => {
+    const k = d.id+'|'+ui.uovaData, n = Math.max(0, (+db.uova[k]||0) + (+d.d));
+    if(n) db.uova[k] = n; else delete db.uova[k];
+    const a = animale(d.id);
+    if(n > 0 && a && (!a.inizioDeposizione || ui.uovaData < a.inizioDeposizione)){
+      a.inizioDeposizione = ui.uovaData; toast(`Inizio deposizione di ${a.nome}: ${fmtD(ui.uovaData)}`);
+    }
+    saveDB();
+    $('#n-'+d.id).textContent = n;
+    const hens = attivi(db.animali).filter(a => isHen(a) && (!ui.uovaPollaio || a.pollaioId===ui.uovaPollaio));
+    $('#uovaTot').textContent = hens.reduce((s,a)=>s+(+db.uova[a.id+'|'+ui.uovaData]||0),0);
+  },
+  addMangime: () => formMangime(null),
+  editMangime: d => formMangime(db.mangime.find(m => m.id===d.id)),
+  delMangime: d => { closeSheet(); confirmSheet('Eliminare questo acquisto di mangime?', 'Elimina', () => { db.mangime = db.mangime.filter(m=>m.id!==d.id); saveDB(); render(); toast('Acquisto eliminato'); }); },
+  export: () => {
+    const txt = JSON.stringify(db, null, 1);
+    try{
+      const url = URL.createObjectURL(new Blob([txt], {type:'application/json'}));
+      const a = document.createElement('a'); a.href = url; a.download = `MOrto22-backup-${today()}.json`;
+      document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url), 4000);
+      toast('Backup esportato');
+    }catch(e){ ACT.copyBackup(); }
+  },
+  copyBackup: async () => {
+    try{ await navigator.clipboard.writeText(JSON.stringify(db)); toast('Backup copiato: incollalo in una nota o in un file'); }
+    catch(e){ toast('Copia non riuscita su questo dispositivo'); }
+  },
+  import: () => $('#importFile').click(),
+  reset: () => confirmSheet('Cancellare <b>tutti</b> i pollai, gli animali, le uova e gli acquisti? Fai prima un backup.', 'Cancella tutto', () => { db = normalize(null); saveDB(); go({name:'home'}); toast('Dati cancellati'); }),
+};
+
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-act]'); if(!t) return;
+  const f = ACT[t.dataset.act]; if(f){ e.preventDefault(); f(t.dataset, t); }
+});
+$('#sheet').addEventListener('click', e => { if(e.target.id==='sheet') closeSheet(); });
+document.addEventListener('change', e => {
+  if(e.target.id==='uovaData' && e.target.value){ ui.uovaData = e.target.value > today() ? today() : e.target.value; render(); }
+  if(e.target.id==='uovaPollaio'){ ui.uovaPollaio = e.target.value; render(); }
+  if(e.target.id==='mangimePollaio'){ ui.mangimePollaio = e.target.value; render(); }
+});
+$('#importFile').addEventListener('change', async e => {
+  const file = e.target.files[0]; e.target.value = ''; if(!file) return;
+  try{
+    const data = JSON.parse(await file.text());
+    if(!data || !Array.isArray(data.pollai)) throw new Error('formato');
+    confirmSheet(`Importare il backup <b>${esc(file.name)}</b>? Sostituirà i dati attuali (${data.pollai.length} pollai, ${(data.animali||[]).length} animali).`, 'Importa', () => { db = normalize(data); saveDB(); go({name:'home'}); toast('Backup importato'); });
+  }catch(err){ toast('File non valido: serve un backup di MOrto22'); }
+});
+window.matchMedia?.('(prefers-color-scheme: dark)').addEventListener?.('change', () => render());
+render();
+</script>
+</body>
+</html>
