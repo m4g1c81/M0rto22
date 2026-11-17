@@ -1,5 +1,5 @@
 /* MOrto22 – service worker: app installabile e utilizzabile anche offline */
-const CACHE = 'morto22-v2.0';
+const CACHE = 'morto22-v2.0.1';
 const CORE = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './icon-maskable-512.png'];
 
 self.addEventListener('install', e => {
